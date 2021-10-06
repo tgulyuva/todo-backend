@@ -17,7 +17,9 @@ func SuccesCreateTask(t *testing.T) {
 		Name: "task testing",
 	}
 
-	expectedResponse := "Success"
+	expectedResponse := models.ResponseModel{
+		Success: true,
+	}
 
 	response := controllers.NewTodoController(mockTask).CreateResponseByTask(request)
 
@@ -34,7 +36,9 @@ func FailCreateTask(t *testing.T) {
 		Name: "task testing",
 	}
 
-	expectedResponse := "Fail"
+	expectedResponse := models.ResponseModel{
+		Success: false,
+	}
 	response := controllers.NewTodoController(mockTask).CreateResponseByTask(request)
 
 	if response != expectedResponse {
@@ -48,7 +52,9 @@ func AddTaskWithDoubleSpace(t *testing.T) {
 		Name: "task doble  space",
 	}
 
-	expectedResponse := "Success"
+	expectedResponse := models.ResponseModel{
+		Success: true,
+	}
 	response := controllers.NewTodoController(mockTask).CreateResponseByTask(request)
 
 	if response != expectedResponse {

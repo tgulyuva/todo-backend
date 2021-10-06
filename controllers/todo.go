@@ -36,13 +36,13 @@ func (controller TodoController) SaveTask(task models.Task) models.Task {
 	return controller.taskDataAcces.Insert(task)
 }
 
-func (controller TodoController) CreateResponseByTask(task models.Task) string {
-	response := ""
+func (controller TodoController) CreateResponseByTask(task models.Task) models.ResponseModel {
+	var response models.ResponseModel
 
 	if task.Id != "0" {
-		response = "Success"
+		response.Success = true
 	} else {
-		response = "Fail"
+		response.Success = false
 	}
 	return response
 }
