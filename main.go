@@ -16,6 +16,3 @@ func main() {
 	http.ListenAndServe("localhost:9000", r)
 
 }
-
-// mock yapısı kurulacak
-// unit testler mock ile yapılacak

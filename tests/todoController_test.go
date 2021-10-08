@@ -49,7 +49,7 @@ func AddTaskWithDoubleSpace(t *testing.T) {
 	mockTask := mocks.MockTask{}
 	request := models.Task{
 		Id:   "0",
-		Name: "task doble  space",
+		Name: "task double  space",
 	}
 
 	expectedResponse := models.ResponseModel{
