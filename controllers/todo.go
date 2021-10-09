@@ -39,7 +39,7 @@ func (controller TodoController) SaveTask(task models.Task) models.Task {
 func (controller TodoController) CreateResponseByTask(task models.Task) models.ResponseModel {
 	var response models.ResponseModel
 
-	if task.Id != "0" {
+	if task.Id != "0" && task.Name !="" {
 		response.Success = true
 	} else {
 		response.Success = false

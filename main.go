@@ -10,9 +10,14 @@ import (
 
 func main() {
 
+	r:= EndPoints()
+	http.ListenAndServe("localhost:9000", r)
+
+}
+func  EndPoints() *httprouter.Router  {
 	r := httprouter.New()
 	tc := controllers.NewTodoController((da.NewTaskDataAccess()))
 	r.POST("/task/add", tc.AddTask)
-	http.ListenAndServe("localhost:9000", r)
 
+	return r
 }
